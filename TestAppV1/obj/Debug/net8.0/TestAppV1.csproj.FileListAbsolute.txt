@@ -32,3 +32,4 @@ D:\TeamProject\TestAppV1\TestAppV1\obj\Debug\net8.0\refint\TestAppV1.dll
 D:\TeamProject\TestAppV1\TestAppV1\obj\Debug\net8.0\TestAppV1.pdb
 D:\TeamProject\TestAppV1\TestAppV1\obj\Debug\net8.0\TestAppV1.genruntimeconfig.cache
 D:\TeamProject\TestAppV1\TestAppV1\obj\Debug\net8.0\ref\TestAppV1.dll
+D:\TeamProject\TestAppV1\TestAppV1\obj\Debug\net8.0\TestAppV1.sourcelink.json
