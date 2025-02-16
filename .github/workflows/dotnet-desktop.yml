@@ -1,0 +1,35 @@
+name: Deploy .NET 8 App to Azure (Windows)
+
+on:
+  push:
+    branches:
+      - main  # Change if using a different branch
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest  # Use Windows runner
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0'  # Use .NET 8
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build Application
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish Application
+      run: dotnet publish -c Release -o ./publish
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: "test-website"  # Your Azure App Service name
+        publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+        package: ./publish
